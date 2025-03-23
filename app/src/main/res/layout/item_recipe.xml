@@ -81,20 +81,20 @@
             android:id="@+id/delete_item_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:backgroundTint="@android:color/holo_red_light"
-            android:text="Usuń"
+            android:text="  🗑️
+"
             android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/saved_item_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="8dp"
             android:backgroundTint="@android:color/holo_green_light"
-            android:text="Zapisz"
-            android:textColor="@android:color/white" />
+            android:text="👍"
+            android:textColor="@color/white"
+          />
     </LinearLayout>
 
 </LinearLayout>

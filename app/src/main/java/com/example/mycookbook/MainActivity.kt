@@ -2,20 +2,20 @@ package com.example.mycookbook
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
-
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mycookbook.ui.ListaPrzepisowFragment
-import com.example.mycookbook.ui.Recipe
+import com.example.mycookbook.ui.ZapisPrzepisowFragment
 
 
 class MainActivity : AppCompatActivity() {
 
 
     private lateinit var listaPrzepisowFragment: ListaPrzepisowFragment
+    private lateinit var zapisPrzepisowFragment: ZapisPrzepisowFragment
     private lateinit var recipeNameEditText: EditText
     private lateinit var recipeInfoEditText: EditText
     private lateinit var addRecipeButton: Button
@@ -28,10 +28,12 @@ class MainActivity : AppCompatActivity() {
 
 
         listaPrzepisowFragment = ListaPrzepisowFragment()
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.mainFragmentContainer, listaPrzepisowFragment)
+         supportFragmentManager.beginTransaction()
+             .replace(R.id.mainFragmentContainer, listaPrzepisowFragment)
             .commit()
+
+
+
 
         recipeNameEditText = findViewById(R.id.recipe_Name)
         recipeInfoEditText = findViewById(R.id.recipe_Info)
@@ -42,7 +44,10 @@ class MainActivity : AppCompatActivity() {
         val categories = resources.getStringArray(R.array.recipe_categories)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categories)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
         categorySpinner.adapter = adapter
+
+
 
 
 
@@ -79,11 +84,15 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Podaj nazwę przepisu", Toast.LENGTH_SHORT).show()
             }
         }
-
-
     }
 
+
+
 }
+
+
+
+
 
 
 

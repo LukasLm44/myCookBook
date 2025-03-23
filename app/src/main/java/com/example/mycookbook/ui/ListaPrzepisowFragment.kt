@@ -1,7 +1,6 @@
 package com.example.mycookbook.ui
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mycookbook.MainActivity
 import com.example.mycookbook.R
 
 
@@ -25,8 +23,6 @@ class ListaPrzepisowFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var recipeAapter: RecipeAdapter
     private val recipeList = mutableListOf<Recipe>()
-
-
 
 
 
@@ -88,20 +84,9 @@ class ListaPrzepisowFragment : Fragment() {
 
             holder.saveButton.setOnClickListener{
 
-                Toast.makeText(holder.itemView.context, "${recipe.name} Zapisywanie...", Toast.LENGTH_LONG).show()
+                Toast.makeText(holder.itemView.context, "${recipe.name} ♥ ", Toast.LENGTH_LONG).show()
 
-                val intent = Intent(holder.itemView.context, MainActivity::class.java)
-
-                // Dodajemy dane do Intent
-                intent.putExtra("recipe_name", recipe.name)
-                intent.putExtra("recipe_info", recipe.info)
-                intent.putExtra("recipe_category", recipe.category)
-                intent.putExtra("recipe_rating", recipe.rating)
-
-
-                holder.itemView.context.startActivity(intent)
             }
-
 
 
             holder.recipeRating.setOnRatingBarChangeListener { _, rating, _ ->
