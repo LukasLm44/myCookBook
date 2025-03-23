@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">mycookbook</string>
+
+    <string-array name="recipe_categories">
+        <item>Wybierz kategorie</item>
+        <item>Zupa</item>
+        <item>Ciasto</item>
+        <item>Dania Główne</item>
+        <item>Napoje</item>
+        <item>Makaron</item>
+        <item>Inne</item>
+    </string-array>
+
+</resources>
